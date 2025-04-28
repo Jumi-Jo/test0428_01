@@ -1,0 +1,236 @@
+@charset "utf-8";
+:root{
+  --main-font : 'GowunBatang', sans-serif;
+  --sub-main-font :"Noto Sans KR", sans-serif;
+  --sub-sub-font : "Montaga", serif;
+  --main-color : #c8a666;
+  --sub-color : #9b97a8;
+  --base-color : #fefbea;
+} 
+body{
+  font-family: var(--main-font);
+  font-size: 1.6rem;
+  line-height: 1.5;
+  color: #333;
+}
+#wrap{
+  min-width: 320px;
+}
+.inner{
+  max-width: 1700px;
+  margin: 0 auto;
+  padding: 0 5%; 
+}
+.content{
+  border-bottom: 1px solid #ddd;
+}
+/*#container*/
+.sub-visual{
+  position: relative;
+}
+.sub-visual video{
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+}
+.sub-visual .sv-txt{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  text-align: center;
+}
+.sub-visual .common-txt span{
+  display: block;
+  font-family: var(--sub-sub-font);
+  font-size: 1.4rem;
+  letter-spacing: 5px;
+  color: #c27a34;
+  text-transform: capitalize;
+}
+.sub-visual .sv-txt h2{
+  font-family: var(--sub-sub-font);
+  font-size: 10rem;
+  padding: 0 0 50px;
+  font-weight: normal;
+  text-transform: capitalize;
+}
+.sub-visual .sv-txt p{
+  font-family: var(--sub-main-font);
+  font-size: 2rem;
+  position: relative;
+  padding-top: 60px;
+  color: #fff;
+}
+.sub-visual .sv-txt p::before{
+  content: "";
+  display: block;
+  width: 1px;
+  height: 50px;
+  background-color: #fff;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+@media (max-width : 768px) {
+  .sub-visual video{
+    height: 500px;
+  }
+  .sub-visual .sv-txt span{
+    font-size: 1.4rem;
+  }
+  .sub-visual .sv-txt h2{
+    font-size: 6rem;
+  }
+  .sub-visual .sv-txt p{
+    font-size: 1.4rem;
+    padding-top: 20px;
+  }
+  .sub-visual .sv-txt p::before{
+    display: none;
+  }
+}
+.common-txt{
+  padding: 100px 0;
+}
+.common-txt span{
+  display: block;
+  font-family: var(--sub-sub-font);
+  font-size: 1.4rem;
+  letter-spacing: 5px;
+  color: #c27a34;
+  text-transform: capitalize;
+}
+.common-txt h3{
+  font-family: var(--sub-sub-font);
+  font-size: 5rem;
+  padding: 0 0 50px;
+  font-weight: normal;
+ text-transform: capitalize;
+}
+
+.common-txt p{
+  font-family: var(--sub-main-font);
+  color: #999;
+  font-size: 2rem;
+}
+.common-txt .p1{
+  color: #c27a34;
+  font-size: 3.0rem;
+  display: inline-block;
+  position: relative;
+  font-weight: normal;
+  letter-spacing: -2px;
+  position: relative;
+}
+.common-txt .p2{
+  padding: 10px 0;
+  letter-spacing: -1px;
+  color: #999;
+}
+.common-txt .p1::after{
+  content: "";
+  width: 110%;
+  height: 20px;
+  background: rgb(194, 122, 52, 0.15);
+  transform: skewX(-15deg);
+  position: absolute;
+  left: -5px;
+  bottom: 5px
+}
+.common-txt .p3{
+  padding: 10px 0;
+  letter-spacing: -1px;
+  color: #999;
+}
+/*.content*/
+.content .inner{
+  padding: 200px 5%;
+}
+.content .inner > div{
+  display: flex; 
+  justify-content: space-between;   
+  flex-wrap: wrap;
+  position: relative;
+}
+.content .d1 .p1{
+  width: 60%;
+  font-family: var(--main-font);
+  font-size: 3.6rem;
+  padding: 0 0 100px;
+  letter-spacing: -3px;
+}
+.content .inner .d1 .p1 span{
+  color: var(--main-color);
+}
+.content .d1 .dimg{
+  width: 25%;
+  position: absolute;
+  right: 0;
+  top: 100px;
+}
+.content img{
+  width: 100%;
+  display: block;
+}
+.content .d2 .dimg, .content .d4 .dimg{
+  width: 50%;
+}
+.content .d2 .common-txt, .content .d4 .common-txt{
+  width: 40%;
+  padding-top: 300px;
+}
+.content .d3 .common-txt, .content .d5 .common-txt{
+  width: 50%;
+}
+.content .d3 .dimg, .content .d5 .dimg{
+  width: 40%;
+  position: absolute;
+  right: 0;
+  top: -50px;
+}
+@media (max-width : 1024px) {
+  .content .inner{
+    padding: 200px 5%;
+  }
+  .content .d1 .p1{
+    width: 70%;
+    font-size: 3rem;
+  }
+  .content .d1 .dimg{
+    width: 100%;
+    position: static;
+    padding: 0 0 50px;
+    transform: translateX(60%);
+  }
+  .content .d1 .dimg img{
+    width: 40%;
+  }
+  .content .d2 .dimg, .content .d3 .dimg, .content .d4 .dimg, .content .d5 .dimg{
+    width: 100%;
+  }
+  .content .d2 .common-txt, .content .d3 .common-txt, .content .d4 .common-txt, .content .d5 .common-txt{
+    width: 100%;
+    padding: 50px 0 100px;
+  }  
+  .content .d3 .dimg, .content .d5 .dimg{
+    position: static;
+  }
+}
+@media (max-width : 768px) {
+  .common-txt span{
+    font-size: 1rem;
+  }
+  .common-txt h3{
+    font-size: 3rem;
+    padding: 0 0 30px;
+  }
+  .common-txt p{
+    font-size: 1.4rem;
+  }
+  .common-txt .p1{
+    font-size: 2rem;
+  }
+}

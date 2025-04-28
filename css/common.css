@@ -1,0 +1,474 @@
+@charset "utf-8";
+:root{
+  --main-font : 'GowunBatang', sans-serif;
+  --sub-main-font :"Noto Sans KR", sans-serif;
+  --sub-sub-font : "Montaga", serif;
+  --main-color : #c8a666;
+  --sub-color : #9b97a8;
+  --base-color : #fefbea;
+}
+/*공통*/
+body{
+  font-family: var(--main-font);
+  font-size: 1.6rem;
+  line-height: 1.5;
+  color: #333;
+}
+footer{
+  font-family: var(--sub-main-font);
+}
+#wrap{
+  min-width: 320px;
+}
+.inner{
+  max-width: 1700px;
+  margin: 0 auto;
+  padding: 0 5%;
+}
+
+
+
+/* allmap */
+#allmap{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: url(../images/common/top_visual_bg.png) no-repeat center / cover;
+  z-index: 99;
+  font-family: var(--sub-main-font);
+}
+#allmap h2{
+  padding: 100px 0 50px;
+  font-size: 6rem;
+  color: var(--main-color);
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: -3px;
+}
+#allmap .allmap-gnb{
+  display: flex;
+}
+#allmap .allmap-gnb > li{
+  width: calc(100% / 5);
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 10px 30px;
+}
+#allmap .allmap-gnb > li > a{
+  display: block;
+  font-size: 3rem;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 50px;
+}
+#allmap .allmap-gnb .adepth2{
+  padding-bottom: 100px;
+}
+#allmap .allmap-gnb .adepth2 li a{
+  display: block;
+  font-size: 2rem;
+  color: #fff;
+  opacity: 0.3;
+  padding: 5px 0;
+  transition: all 0.5s;
+}
+#allmap .allmap-gnb .adepth2 li:hover a{
+  color: var(--main-color);
+  opacity: 1;
+}
+#allmap .a-x{
+  position: fixed;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+}
+
+/*header*/
+header{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 0 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  z-index: 10;
+}
+header .inner{
+  display: flex;
+  justify-content: space-between;
+ 
+}
+header h1 a{
+  display: block;
+  padding: 30px 0 10px;
+  color: transparent;
+  font-size: 0;
+  width: 100px;
+  height: 58px;
+  background: url(../images/common/logo_w.png) no-repeat center / cover;
+  margin-left: -20px;
+}
+header nav{
+  margin: 20px auto 0 50px;
+}
+header .gnb{
+  display: flex;
+  text-align: center;
+}
+header .gnb > li{
+  width: calc(100% / 5);
+}
+header .gnb > li > a{
+  display: block;
+  padding: 0 30px;
+  font-size: 2.2rem;
+  color: #fff;
+  transition: all 0.5s;
+}
+header .gnb > li > a::after{
+  content: "";
+  display: block;
+  height: 3px;
+  background-color: var(--main-color);
+  position: absolute;
+  bottom: 0;
+  transform: translateX(-25%);
+  width: 0;
+  transition: all 0.5s;
+}
+header .gnb > li:hover > a{
+  color: var(--main-color);
+}
+header .gnb > li:hover > a::after{
+  width: 7%;
+}
+/*.gnb .depth2*/
+header .gnb .depth2{
+  position: absolute;
+  bottom: -65px;
+  display: flex;
+  gap: 20px;
+  z-index: 50;
+}
+header .gnb .depth2 li a{
+  display: block;
+  padding: 20px;
+  font-family: var(--sub-main-font);
+}
+header .gnb .depth2 li:hover a{
+  color: var(--main-color);
+}
+/*.depth2-bg*/
+header .depth2-bg{
+  background-color: #fff;
+  position: absolute;
+  top: 89px;
+  width: 100%;
+  height: 65px;
+}
+/*.mgnb-wrap*/
+header .mgnb-wrap{
+  position: fixed;
+  top: 0;
+  right: -100%;
+  z-index: 99;
+  width: 100%;
+  height: 100vh;
+  background-color: #fff;
+  padding: 8% 5%;
+}
+header .mgnb{
+  border-top: 1px solid #000;
+}
+header .mgnb > li{
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+header .mgnb > li > p{
+  font-size: 2.4rem;
+  padding: 15px 0 10px;
+  color: #000;
+}
+header .mgnb .mdepth2 li a{
+  display: block;
+  font-family: var(--sub-main-font);
+  font-size: 1.6rem;
+  padding: 3px 0;
+  transform: translateX(30px);
+  color: #666;
+}
+header .mgnb .mdepth2 li:last-child a{
+  padding-bottom: 10px;
+}
+header .mgnb .mdepth2 li a::before{
+  content: "";
+  display: block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: #000;
+  opacity: 0.3;
+  transform: translate(-15px, 15px);
+}
+header .mgnb-wrap .mgnb-x{
+  position: absolute;
+  top: 2%;
+  right: 5%;
+  background-color: transparent;
+  font-size: 2.4rem;
+  cursor: pointer;
+}
+/*.util*/
+header .util{
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+header .util .all-open, header .util .mgnb-open{
+  font-size: 0;
+  color: transparent;
+  position: relative;
+  cursor: pointer;
+}
+header .util .all-open{
+  width: 35px;
+  height: 5px;
+  background-color: transparent;
+}
+header .util .mgnb-open{
+  display: none;
+}
+header .util .all-open::before{
+  content: "";
+  display: block;
+  width: 35px;
+  height: 2px;
+  background-color: #fff;
+  position: absolute;
+  top: -10px;
+  left: -10px;
+}
+header .util .all-open::after{
+  content: "";
+  display: block;
+  width: 25px;
+  height: 2px;
+  background-color: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+header .util .mgnb-open::before{
+  content: "";
+  display: block;
+  width: 35px;
+  height: 2px;
+  background-color: #fff;
+  position: absolute;
+  top: -10px;
+  left: -10px;
+}
+header .util .mgnb-open::after{
+  content: "";
+  display: block;
+  width: 25px;
+  height: 2px;
+  background-color: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+header .util select{
+  background-color: transparent;
+  color: #fff;
+  cursor: pointer;
+  width: 50px;
+}
+header .util option{
+  background-color: var(--main-color);
+  padding: 20px 10px;
+  border: none;
+}
+/*header.active*/
+header.active{
+  background-color: #fff;
+  border-bottom: 1px solid rgba(0, 0 , 0, 0.2);
+}
+header.active h1 a{
+  background: url(../images/common/logo_b.png) no-repeat center / cover;
+}
+header.active .gnb > li > a{
+  color: #000;
+}
+header.active .util .all-open::before, header.active .util .mgnb-open::before, header.active .util .all-open::after, header.active .util .mgnb-open::after{
+  background-color: #000;
+}
+header.active .util select{
+  color: #000;
+}
+
+/*반응형*/
+@media (max-width : 1024px) {
+  header h1 a{
+    width: 80px;
+    height: 45px;
+    margin-left: 0;
+  }
+  header .gnb{
+    display: none;
+  }
+}
+@media (max-width : 768px) {
+  header .inner{
+    padding: 0 3%;
+  }
+  header .util select{
+    display: none;
+  }
+  header .mgnb-wrap .mgnb-x{
+    top: 2%;
+    font-size: 2rem;
+  }
+  header .util .all-open{
+    display: none;
+  }
+  header .util .mgnb-open{
+    display: block;
+  }
+}
+
+/*footer*/
+footer .inner{
+  padding: 150px 5%;
+  position: relative;
+}
+footer .f-logo{
+  display: flex;
+  gap: 20px;
+  align-items: flex-end;
+}
+footer .f-logo img:first-child{
+  width: 120px;
+  height: 70px;
+  object-fit: contain;
+}
+footer .f-logo img:last-child{
+  width: 180px;
+  height: 50px;
+  object-fit: contain;
+}
+footer .f-cs{
+ position: absolute;
+ top: 200px;
+ right: 5%;
+ text-align: right;
+}
+footer .f-cs h3{
+  font-size: 1.6rem;
+}
+footer .f-cs p a{
+  display: block;
+  color: var(--main-color);
+  font-size: 3.6rem;
+  padding: 10px 0 20px;
+}
+footer .date{
+  color: #999;
+  font-size: 1.6rem;
+  position: absolute;
+  top: 300px;
+  right: 5%;
+  text-align: right;
+}
+footer .sns{
+  display: flex;
+  justify-content: end;
+  gap: 20px;
+  position: absolute;
+  top: 150px;
+  right: 5%;
+}
+footer .sns li a{
+  display: block;
+  font-size: 2.4rem;
+  color: #999;
+}
+footer .f-info{
+  display: flex;
+  gap: 20px;
+  justify-content: left;
+}
+footer .f-info li a{
+  display: block;
+  font-size: 1.6rem;
+  padding: 20px 0 ;
+}
+footer address{
+  font-size: 1.6rem;
+}
+footer address span{
+  display: inline-block;
+  margin: 0 10px 0 20px;
+  color: #999;
+}
+footer address span:last-child{
+  margin-left: 0;
+}
+footer .copy{
+  color: #999;
+  padding: 20px 0 0;
+  font-size: 1.6rem;
+}
+/*반응형*/
+@media (max-width : 1200px) {
+  footer .inner{
+    padding: 100px 5%;
+  }
+}
+@media (max-width : 1024px) {
+  footer .inner{
+    padding: 50px 5%;
+  }
+  footer .inner > div, footer .inner > ul{
+    position: static;
+  }
+  footer .f-cs{
+    text-align: left;
+    margin-top: 20px;
+   }
+   footer .date{
+    text-align: left;
+   }
+   footer .sns{
+    justify-content: left;
+    margin-top: 20px;
+  }
+  footer .f-logo img:first-child{
+    width: 100px;
+    height: 70px;
+    object-fit: contain;
+  }
+  footer .f-logo img:last-child{
+    width: 150px;
+    height: 50px;
+    object-fit: contain;
+  }
+}
+@media (max-width : 768px) {
+  footer .f-cs h3{
+    font-size: 1.4rem;
+  }
+  footer .date{
+    font-size: 1.4rem;
+  }
+  footer .f-info li a{
+    font-size: 1.4rem;
+  }
+  footer address{
+    font-size: 1.4rem;
+  }
+  footer .copy{
+    font-size: 1.4rem;
+  }
+}
